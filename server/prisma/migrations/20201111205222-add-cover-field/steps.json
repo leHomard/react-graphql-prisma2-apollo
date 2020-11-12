@@ -1,0 +1,152 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "Artist",
+      "field": "cover",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Artist",
+      "field": "Song",
+      "type": "Song",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Artist",
+      "field": "Album",
+      "type": "Album",
+      "arity": "List"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Artist",
+      "field": "albums"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Artist",
+      "field": "Songs"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Artist",
+      "field": "age",
+      "arity": "Optional"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Artist",
+      "field": "biography",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Album",
+      "field": "cover",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Album",
+      "field": "artist",
+      "type": "Artist",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Album",
+          "field": "artist"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Album",
+          "field": "artist"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[artistId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Album",
+          "field": "artist"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Album",
+      "field": "songs"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Album",
+      "field": "Artist"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Album",
+      "field": "genre",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Song",
+      "field": "cover",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Song",
+      "field": "Album"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Song",
+      "field": "albumId"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Song",
+      "field": "duration",
+      "arity": "Optional"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Song",
+      "field": "artistId",
+      "arity": "Optional"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Song",
+      "field": "artist",
+      "arity": "Optional"
+    }
+  ]
+}

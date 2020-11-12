@@ -1,0 +1,36 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "Artist",
+      "field": "stageName",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Artist",
+      "field": "song",
+      "type": "Song",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Artist",
+      "field": "album",
+      "type": "Album",
+      "arity": "List"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Artist",
+      "field": "Song"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Artist",
+      "field": "Album"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Prisma Migrate lockfile v1
+
+20201110212806-first-migration
+20201111205222-add-cover-field
+20201111212604-add-stage-name-field
